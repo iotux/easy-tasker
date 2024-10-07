@@ -1,6 +1,6 @@
 {
   "name": "easy-tasker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A flexible task scheduler for interval and time-aligned scheduling",
   "main": "src/TaskScheduler.js",
   "directories": {
