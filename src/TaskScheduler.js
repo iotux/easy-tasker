@@ -25,14 +25,17 @@ class TaskScheduler {
 
   intervalSchedule(delaySeconds, intervalSeconds, ...args) {
     if (!this.intervalJob) {
-      this.args = args;
+      this.args = args;  // Set the initial arguments
       this.currentInterval = intervalSeconds;
 
       this.log(`Scheduling task with delay of ${delaySeconds} seconds and interval of ${intervalSeconds} seconds.`);
-      this.log(`Arguments passed: ${JSON.stringify(args)}`);
+      this.log(`Arguments passed: ${JSON.stringify(this.args)}`);
 
       setTimeout(() => {
-        this.taskFunction(...this.args);
+        if (!this.isPaused) {
+          this.log(`Executing task for the first time with arguments: ${JSON.stringify(this.args)}`);
+          this.taskFunction(...this.args);
+        }
 
         this.intervalJob = setInterval(() => {
           if (!this.isPaused) {
@@ -50,7 +53,7 @@ class TaskScheduler {
       this.currentCronSchedule = cronSchedule;
 
       this.log(`Scheduling task with cron expression: ${cronSchedule}.`);
-      this.log(`Arguments passed: ${JSON.stringify(args)}`);
+      this.log(`Arguments passed: ${JSON.stringify(this.args)}`);
 
       this.scheduledJob = schedule.scheduleJob(cronSchedule, () => {
         if (!this.isPaused) {
@@ -74,7 +77,7 @@ class TaskScheduler {
   }
 
   updateArgs(...newArgs) {
-    this.args = newArgs;
+    this.args = newArgs; // Update arguments
     this.log(`Arguments updated to: ${JSON.stringify(this.args)}`);
   }
 
