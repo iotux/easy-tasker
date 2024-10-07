@@ -1,5 +1,5 @@
 
-### EasyTasker - Task Scheduler
+# EasyTasker - Task Scheduler
 TaskScheduler is a flexible and easy-to-use scheduling library designed to manage tasks based on either fixed intervals or cron-formatted schedules. This package is ideal for handling tasks in scenarios where you need rate-limited operations or time-aligned scheduling.
 
 ## Features
@@ -40,7 +40,7 @@ scheduler.setNewSchedule('*/5 * * * *'); // Run every 5 minutes
 scheduler.stopScheduling(); // Stop any scheduled jobs
 ```
 ## API
-# intervalSchedule(delay, interval, task)
+### intervalSchedule(delay, interval, task)
 * delay: Time in milliseconds before the task first starts.
 * interval: Time in milliseconds for the task to run repeatedly.
 * task: The function to execute at each interval.
@@ -53,7 +53,7 @@ scheduler.intervalSchedule(2000, 10000, () => {
     console.log('Task runs every 10 seconds after a 2-second delay');
 });
 ```
-# timeAlignedSchedule(cronString, task)
+### timeAlignedSchedule(cronString, task)
 * cronString: A cron expression that specifies when the task should run.
 * task: The function to execute at the specified time.
 
@@ -65,7 +65,7 @@ scheduler.timeAlignedSchedule('0 * * * *', () => {
     console.log('Task runs every hour on the hour');
 });
 ```
-# setNewInterval(interval)
+### setNewInterval(interval)
 * interval: The new interval in milliseconds.
 This method updates the interval of a running interval-based task.
 
@@ -73,7 +73,7 @@ This method updates the interval of a running interval-based task.
 ```js
 scheduler.setNewInterval(3000);
 ```
-# setNewSchedule(cronString)
+### setNewSchedule(cronString)
 * newCronString:  A new cron-formatted string to update the task schedule.
 This method updates the cron expression for a time-aligned task.
 **Example:**
