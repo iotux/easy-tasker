@@ -1,6 +1,6 @@
 {
   "name": "easy-tasker",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A flexible task scheduler for interval and time-aligned scheduling",
   "main": "src/TaskScheduler.js",
   "directories": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iotux/task-scheduler.git"
+    "url": "git+https://github.com/iotux/easy-tasker.git"
   },
   "keywords": [
     "easy-task",
@@ -32,9 +32,9 @@
   "author": "iotux",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iotux/task-scheduler/issues"
+    "url": "https://github.com/iotux/easy-tasker/issues"
   },
-  "homepage": "https://github.com/iotux/task-scheduler#readme",
+  "homepage": "https://github.com/iotux/easy-tasker#readme",
   "dependencies": {
     "node-schedule": "^2.1.1"
   }
